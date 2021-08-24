@@ -16,14 +16,10 @@ public class ShopService {
     private DatabaseManager databaseManager;
 
     public ResponseEntity<?> getShopInfo(int shopId) {
-        ShopDTO shop = null;
-        try {
-            shop = databaseManager.getFactory(DatabaseManager.Type.MONGODB).shopData().getData(shopId);
-            if (Objects.isNull(shop)) {
-                shop = databaseManager.getFactory(DatabaseManager.Type.POSTGRES).shopData().getData(shopId);
-            }
-        } catch (Exception e) {
-            log.error("Shop error: " + e);
+        ShopDTO shop;
+        shop = databaseManager.getFactory(DatabaseManager.Type.MONGODB).shopData().getData(shopId);
+        if (Objects.isNull(shop)) {
+            shop = databaseManager.getFactory(DatabaseManager.Type.POSTGRES).shopData().getData(shopId);
         }
         return ResponseEntity.ok(shop);
     }

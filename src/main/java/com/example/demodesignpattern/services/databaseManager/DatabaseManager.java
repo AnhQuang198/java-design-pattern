@@ -1,16 +1,18 @@
 package com.example.demodesignpattern.services.databaseManager;
 
+import com.example.demodesignpattern.exceptions.ResourceNotFoundException;
 import com.example.demodesignpattern.services.databaseManager.factories.DatabaseAbstractFactory;
 import com.example.demodesignpattern.services.databaseManager.factories.MongoFactory;
 import com.example.demodesignpattern.services.databaseManager.factories.PostgresFactory;
 import com.example.demodesignpattern.services.databaseManager.factories.RedisFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 /**
  * singleton and abstract factory
  */
-@Configuration
+@Service
 public class DatabaseManager {
 
     @Autowired
@@ -29,7 +31,7 @@ public class DatabaseManager {
         return SingletonHelper.INSTANCE;
     }
 
-    public DatabaseAbstractFactory getFactory(Type type) throws Exception {
+    public DatabaseAbstractFactory getFactory(Type type) {
         switch (type) {
             case REDIS:
                 return redisFactory;
@@ -38,7 +40,7 @@ public class DatabaseManager {
             case POSTGRES:
                 return postgresFactory;
             default:
-                throw new Exception("Database not found");
+                throw new ResourceNotFoundException("Database not found");
         }
     }
 

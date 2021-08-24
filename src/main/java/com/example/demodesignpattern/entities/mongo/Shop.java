@@ -17,6 +17,5 @@ public class Shop {
     @Id
     private Integer id;
     private String name;
-    private Long createdAt;
-    private Long updatedAt;
+    private String phone;
 }
