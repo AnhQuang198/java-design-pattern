@@ -31,7 +31,7 @@ public class ShopPostgresData implements ShopFactory {
     }
 
     @Override
-    public void createShop() throws Exception {
+    public void createShop() {
         log.info("Created shop Postgress");
     }
 

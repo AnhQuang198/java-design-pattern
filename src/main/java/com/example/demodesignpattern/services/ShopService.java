@@ -1,6 +1,8 @@
 package com.example.demodesignpattern.services;
 
 import com.example.demodesignpattern.dtos.ShopDTO;
+import com.example.demodesignpattern.exceptions.BadRequestException;
+import com.example.demodesignpattern.exceptions.ResourceNotFoundException;
 import com.example.demodesignpattern.services.databaseManager.DatabaseManager;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +27,8 @@ public class ShopService {
     }
 
     public ResponseEntity<?> createShop() {
-        try {
 //            databaseManager.getFactory(DatabaseManager.Type.MONGODB).shopData().createShop();
-            databaseManager.getFactory(DatabaseManager.Type.POSTGRES).shopData().createShop();
-        } catch (Exception e) {
-            log.error("Shop create error: " + e);
-        }
-        return (ResponseEntity<?>) ResponseEntity.accepted();
+        databaseManager.getFactory(DatabaseManager.Type.POSTGRES).shopData().createShop();
+        return ResponseEntity.ok("Created");
     }
 }

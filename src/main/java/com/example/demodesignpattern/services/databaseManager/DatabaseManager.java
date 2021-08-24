@@ -6,7 +6,6 @@ import com.example.demodesignpattern.services.databaseManager.factories.MongoFac
 import com.example.demodesignpattern.services.databaseManager.factories.PostgresFactory;
 import com.example.demodesignpattern.services.databaseManager.factories.RedisFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 /**

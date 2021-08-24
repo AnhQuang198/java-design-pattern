@@ -5,5 +5,5 @@ import com.example.demodesignpattern.dtos.ShopDTO;
 public interface ShopFactory {
     ShopDTO getData(Integer shopId);
 
-    void createShop() throws Exception;
+    void createShop();
 }
