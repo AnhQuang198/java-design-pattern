@@ -2,7 +2,6 @@ package com.example.demodesignpattern.entities;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Immutable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +12,7 @@ import javax.persistence.Table;
 @Table(schema = "shops", name = "shop")
 @Data
 @NoArgsConstructor
-public class Shop extends com.example.demodesignpattern.entities.abstracts.Shop {
+public class Shop {
     @Id
     private Integer id;
 

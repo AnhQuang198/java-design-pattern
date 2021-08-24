@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Shop extends com.example.demodesignpattern.entities.abstracts.Shop {
+public class Shop {
     @Id
     private Integer id;
     private String name;
