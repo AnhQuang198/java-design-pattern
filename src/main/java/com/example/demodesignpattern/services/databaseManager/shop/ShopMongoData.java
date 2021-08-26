@@ -33,8 +33,8 @@ public class ShopMongoData implements ShopFactory {
     }
 
     @Override
-    public void createShop() {
-        log.info("Created shop Mongo");
+    public void createShop(ShopDTO shopDTO) {
+        log.info("Create shop Mongo");
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.demodesignpattern.controllers;
 
+import com.example.demodesignpattern.dtos.ShopDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,9 @@ public class ShopController extends BaseController{
     }
 
     @PostMapping("/shops")
-    public ResponseEntity<?> createShop() {
-        return shopService.createShop();
+    public ResponseEntity<?> createShop(
+            @RequestBody ShopDTO shopDTO
+            ) {
+        return shopService.createShop(shopDTO);
     }
 }

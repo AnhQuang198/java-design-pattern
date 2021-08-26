@@ -17,11 +17,12 @@ public class ShopData {
         shop = databaseManager.getFactory(DatabaseManager.Type.MONGODB).shopData().getData(shopId);
         if (Objects.isNull(shop)) {
             shop = databaseManager.getFactory(DatabaseManager.Type.POSTGRES).shopData().getData(shopId);
+            createShop(shop);
         }
         return shop;
     }
 
-    public void createShop() {
-        databaseManager.getFactory(DatabaseManager.Type.MONGODB).shopData().createShop();
+    public void createShop(ShopDTO shopDTO) {
+        databaseManager.getFactory(DatabaseManager.Type.MONGODB).shopData().createShop(shopDTO);
     }
 }

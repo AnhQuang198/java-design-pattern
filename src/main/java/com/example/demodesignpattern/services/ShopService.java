@@ -19,8 +19,8 @@ public class ShopService {
         return ResponseEntity.ok(shop);
     }
 
-    public ResponseEntity<?> createShop() {
-        shopData.createShop();
+    public ResponseEntity<?> createShop(ShopDTO shopDTO) {
+        shopData.createShop(shopDTO);
         return ResponseEntity.ok("Created");
     }
 }

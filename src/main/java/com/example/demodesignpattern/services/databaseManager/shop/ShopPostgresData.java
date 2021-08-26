@@ -31,8 +31,8 @@ public class ShopPostgresData implements ShopFactory {
     }
 
     @Override
-    public void createShop() {
-        log.info("Created shop Postgres");
+    public void createShop(ShopDTO shopDTO) {
+        log.info("Create shop Posgres");
     }
 
 }
