@@ -32,7 +32,7 @@ public class ShopPostgresData implements ShopFactory {
 
     @Override
     public void createShop() {
-        log.info("Created shop Postgress");
+        log.info("Created shop Postgres");
     }
 
 }
